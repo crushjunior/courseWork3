@@ -6,17 +6,20 @@ import com.skypro.coursework3.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Service
-public class JavaQuestionService implements QuestionService{
+public class MathQuestionService implements QuestionService {
     private final QuestionRepository questions;
     private final UtilService utilService;
 
-    public JavaQuestionService(@Qualifier("javaQuestionRepository") QuestionRepository questions, UtilService utilService) {
+    public MathQuestionService(@Qualifier("mathQuestionRepository") QuestionRepository questions, UtilService utilService) {
         this.questions = questions;
         this.utilService = utilService;
     }
+
 
     @Override
     public Question add(String question, String answer) {

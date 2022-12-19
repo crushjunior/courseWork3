@@ -26,14 +26,14 @@ public class ExaminerServiceImplTest {
 
     @InjectMocks
     ExaminerServiceImpl examinerService;
+    private final Collection<Question> questions = Set.of(
+            test1,
+            new Question("Test2", "Testik2"),
+            new Question("Test3", "Testik3"),
+            new Question("Test4", "Testik4"),
+            new Question("Test5", "Testik5")
+    );
 
-private final Collection<Question> questions = Set.of(
-        test1,
-        new Question("Test2", "Testik2"),
-        new Question("Test3", "Testik3"),
-        new Question("Test4", "Testik4"),
-        new Question("Test5", "Testik5")
-);
     @BeforeEach
     public void setUp() {
         when(javaQuestionService.getAll()).thenReturn(questions);
